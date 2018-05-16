@@ -8,7 +8,21 @@
 </head>
 <body>
 <h1>URL SHORTENET</h1>
+<table>
+<tr>
+<th>long url</th>
+<th>short url</th>
+</tr>
 
+<% urls.forEach(urlItem => { %>
+<tr>
+<td> <%= urlItem.longUrl %></td>
+<td> <%= urlItem.slug %></td>
+</tr>
+<% }) %> 
+
+
+</table>
 
 
 
