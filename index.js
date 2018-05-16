@@ -20,12 +20,17 @@ const urls = [
 ]
 
 
-app.get('/', (req, res) => {res.render('index.ejs', {urls: urls})})
+app.get('/', (req, res) => {
+  
+  const host = req.get('host')
+  res.render('index.ejs', {urls: urls, host: host})})
+
+
 
 app.get('/:slug', (req, res) => {
-  const urlItem = urls.find(item => item.slug === req.param.slug)
+  const urlItem = urls.find(item => item.slug === req.params.slug)
   if (urlItem) 
-  {  res.redirect(301, urlItem.longUrl)
+  {  res.redirect(urlItem.longUrl)
   } else {
     res.status(404)
     res.send("404 not found")

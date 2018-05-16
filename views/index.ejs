@@ -17,9 +17,10 @@
 <% urls.forEach(urlItem => { %>
 <tr>
 <td> <%= urlItem.longUrl %></td>
-<td> <%= urlItem.slug %></td>
+<td> <a href="//<%= host %>/<%= urlItem.slug %>"><%= urlItem.slug %></a></td>
 </tr>
 <% }) %> 
+
 
 
 </table>
